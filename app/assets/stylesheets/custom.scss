@@ -11,8 +11,15 @@ $gray-medium-light: #eaeaea;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
 }
+.ticket-box {
+  background-color: #e6eeff;
+  font-family: Trebuchet;
+  font-size: 25px;
+}
 
-
+.navbar {
+  background-color: #008080;
+}
 /* universal */
 
 body {
@@ -33,7 +40,15 @@ textarea {
       margin-bottom: 10px;
     }
 }
+.btn {
+  background-color: #6900cc;
+}
 
+img.logo{
+  align-content: center;
+  width: 150px;
+  height: 50px;
+}
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {

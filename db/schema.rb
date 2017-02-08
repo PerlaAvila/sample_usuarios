@@ -10,22 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170201153905) do
+ActiveRecord::Schema.define(version: 20170203200844) do
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "flight_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["flight_id"], name: "index_bookings_on_flight_id"
+  end
+
+  create_table "flights", force: :cascade do |t|
+    t.string   "destiny"
+    t.date     "date"
+    t.integer  "seats"
+    t.integer  "price"
+    t.time     "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_bookings", force: :cascade do |t|
+    t.integer  "booking_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_user_bookings_on_booking_id"
+    t.index ["user_id"], name: "index_user_bookings_on_user_id"
+  end
+
+  create_table "user_flights", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "flight_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["flight_id"], name: "index_user_flights_on_flight_id"
+    t.index ["user_id"], name: "index_user_flights_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
-    t.string   "password_digest"
-    t.boolean  "admin",             default: false
-    t.string   "remember_digest"
-    t.string   "activation_digest"
-    t.boolean  "activated",         default: false
-    t.datetime "activated_at"
-    t.string   "reset_digest"
-    t.datetime "reset_sent_at"
-    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end

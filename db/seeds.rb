@@ -6,21 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(name:  "Example User",
-             email: "example@railstutorial.org",
-             password:              "foobar",
-             password_confirmation: "foobar",
-             activated: true,
-             activated_at: Time.zone.now)
+User.create!(name:  "Admin",
+             email: "admin@peruli.org")
 
-99.times do |n|
-  name  = Faker::Name.name
-  email = "example-#{n+1}@railstutorial.org"
-  password = "password"
-  User.create!(name:  name,
-               email: email,
-               password:              password,
-               password_confirmation: password,
-               activated: true,
-               activated_at: Time.zone.now)
-end
+UserFlight.create(user_id: 1, flight_id: 1)
+Flight.create(destiny: "Miami", date:"2017-05-18", seats: 30, price: 250)
+
+Booking.create(flight_id: 1)
+
+UserBooking.create(booking_id:1, user_id:1)

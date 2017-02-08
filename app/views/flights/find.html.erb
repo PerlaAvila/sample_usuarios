@@ -1,0 +1,23 @@
+<div class="ticket-box"><% @flight.each do |flights| %>
+  <% @destiny = flights.destiny %>
+  Destiny: <%= @destiny %>
+  <br>
+  <% @seats = flights.seats %>
+  Available seats: <%= @seats %>
+  <br>
+  <% @price = flights.price %>
+  Price: $<%= @price %>.00
+  <br>
+  <% @date = flights.date %>
+  Date: <%= @date %>
+ 
+    <%= form_for :flights, method: "get" do |f| %>
+      <%= f.hidden_field :value => @destiny %> 
+      <%= f.hidden_field :value => @seats %>
+      <%= f.hidden_field :value => @price %>
+      <%= f.hidden_field :value => @date %>
+    <p><%= f.submit "Buy ticket" %></p>
+    <% end %>
+
+<% end %> 
+</div>

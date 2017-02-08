@@ -1,0 +1,2 @@
+class UserFlightsController < ApplicationController
+end

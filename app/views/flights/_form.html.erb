@@ -1,0 +1,6 @@
+ <div><%= form_tag(find_path, method: "get") do %>
+    <%= text_field_tag :title, "From" %>
+    <%= date_field_tag :body, class: 'form-control'%>
+    <%= submit_tag "Submit" %>
+  <% end %>
+</div>
