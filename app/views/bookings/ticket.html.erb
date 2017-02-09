@@ -1,0 +1,9 @@
+<%= @user.name %>
+<br>
+Find your tickets: <%= @user.email %>
+<br>
+<% flight = Flight.find(@flightid) %>
+<br>
+Destination: <%= flight.destiny %>
+<br>
+Departure: <%= flight.date %>

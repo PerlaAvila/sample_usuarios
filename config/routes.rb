@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post   '/new',   to: 'users#create'
   get '/find', to: 'flights#find'
   get '/register', to: 'users#save'
+  get '/booking', to: 'bookings#new'
+  post '/booking', to: 'bookings#booking'
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
